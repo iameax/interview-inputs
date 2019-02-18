@@ -1,1 +1,1 @@
-# interview-inputs
+Inputs implementation.
