@@ -66,9 +66,7 @@ const asFloatInput: HOC<InProps, OutProps> = compose(
       if (isEmpty(value)) {
         return ``
       }
-      // 0.
-      // [1-9]\d*
-      // ((0\.?)|([1-9]\d*))
+
       const matchRes = value.match(/^-?(0|([1-9]\d*))?(\.(\d+)?)?/, ``)
 
       return matchRes ? matchRes[0] : ``
