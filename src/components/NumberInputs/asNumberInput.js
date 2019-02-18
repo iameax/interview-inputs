@@ -3,7 +3,7 @@ import isNil from 'lodash/isNil'
 import omit from 'lodash/omit'
 
 import React, { useCallback, useState, useEffect } from 'react'
-import type { HOC } from './types';
+import type { HOC } from '../common/types';
 
 
 type NumberValue = number | null

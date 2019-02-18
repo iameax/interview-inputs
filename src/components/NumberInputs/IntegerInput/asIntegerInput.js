@@ -8,7 +8,7 @@ import {
   withHandlers,
 } from 'recompose'
 
-import asNumberInput from '../common/asNumberInput'
+import asNumberInput from '../asNumberInput'
 
 
 type InProps = {

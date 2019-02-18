@@ -3,7 +3,6 @@ import { compose, defaultProps } from 'recompose'
 
 import type { HOC } from '@infotech/reference-ui-common/src/common/types'
 import manageClearable from './manageClearable'
-import manageFocus from './manageFocus'
 import manageValue from './manageValue'
 
 
@@ -38,7 +37,6 @@ const asInput: HOC<InProps, OutProps> = compose(
     value: ``,
     onChange: Function.prototype,
   }),
-  manageFocus,
   manageClearable,
   manageValue,
 )

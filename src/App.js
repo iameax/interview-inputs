@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Input from './components/Input';
-import IntegerInput from './components/IntegerInput';
-import FloatInput from './components/FloatInput';
+import { IntegerInput, FloatInput } from './components/NumberInputs';
 import SearchInput from './components/SearchInput';
 
 import styles from './App.module.css'

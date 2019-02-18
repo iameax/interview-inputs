@@ -10,9 +10,9 @@ import {
   withHandlers,
 } from 'recompose'
 
-import asNumberInput from '../common/asNumberInput'
-import removeProps from '../common/removeProps'
-import type { HOC } from '../common/types';
+import asNumberInput from '../asNumberInput'
+import removeProps from '../../common/removeProps'
+import type { HOC } from '../../common/types';
 
 
 type InProps = {
@@ -45,9 +45,10 @@ const asFloatInput: HOC<InProps, OutProps> = compose(
         return ``
       }
 
-      const [integer, fraction] = value.split(`.`, 2)
+      const [integerString, fractionString] = value.split(`.`, 2)
+      const integer = Number(integerString)
 
-      const formattedFraction = formatFractionDigits(fraction, fractionLength)
+      const formattedFraction = formatFractionDigits(fractionString, fractionLength)
       const numberString = isEmpty(formattedFraction) ? integer : `${integer}.${formattedFraction}`
 
       return numberString
@@ -65,8 +66,10 @@ const asFloatInput: HOC<InProps, OutProps> = compose(
       if (isEmpty(value)) {
         return ``
       }
-
-      const matchRes = value.match(/^-?(\d+)?\.?(\d+)?/, ``)
+      // 0.
+      // [1-9]\d*
+      // ((0\.?)|([1-9]\d*))
+      const matchRes = value.match(/^-?(0|([1-9]\d*))?(\.(\d+)?)?/, ``)
 
       return matchRes ? matchRes[0] : ``
     },
