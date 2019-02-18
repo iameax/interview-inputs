@@ -1,0 +1,16 @@
+.container {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.values {
+  margin: 30px 0;
+}
+
+.form {
+  margin: 30px 0;
+}
+
+.row {
+  margin-bottom: 19px;
+}
