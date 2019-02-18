@@ -46,7 +46,7 @@ const asFloatInput: HOC<InProps, OutProps> = compose(
       }
 
       const [integerString, fractionString] = value.split(`.`, 2)
-      const integer = Number(integerString)
+      const integer = Number(integerString) ? Number(integerString) : '';
 
       const formattedFraction = formatFractionDigits(fractionString, fractionLength)
       const numberString = isEmpty(formattedFraction) ? integer : `${integer}.${formattedFraction}`
