@@ -46,10 +46,12 @@ const asFloatInput: HOC<InProps, OutProps> = compose(
       }
 
       const [integerString, fractionString] = value.split(`.`, 2)
-      const integer = Number(integerString) ? Number(integerString) : '';
+      if (isNaN(Number(integerString))) {
+        return ``
+      }
 
       const formattedFraction = formatFractionDigits(fractionString, fractionLength)
-      const numberString = isEmpty(formattedFraction) ? integer : `${integer}.${formattedFraction}`
+      const numberString = isEmpty(formattedFraction) ? integerString : `${integerString}.${formattedFraction}`
 
       return numberString
     },
